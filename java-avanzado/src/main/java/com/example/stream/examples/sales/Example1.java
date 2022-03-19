@@ -18,7 +18,6 @@ public class Example1 {
     public static void main(String[] args) {
 
 
-        List<Sale> sales = getSales();
-        sales.stream().filter(sale -> sale.getYear() == 2021).sorted((o1, o2) -> o1.getValue()).forEach(System.out::println);
-    }
+       List<Sale> sales = getSales();
+        sales.stream().filter(sale -> sale.getYear() == 2021).sorted( comparing(sale -> sale.getValue())).forEach(System.out::println);}
 }
